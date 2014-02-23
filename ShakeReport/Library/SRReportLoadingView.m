@@ -17,8 +17,9 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
         self.layer.cornerRadius = 5;
+
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(frame), 30)];
-        label.text = @"Sending Report";
+        label.text = NSLocalizedString(@"sending_report", nil);
         label.textColor = [UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = NSTextAlignmentCenter;

@@ -416,8 +416,13 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     [_loadingView removeFromSuperview];
     
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Report sent" message:@"Thank you for your help." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"report_title", nil)
+                                                    message:NSLocalizedString(@"report_message", nil)
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"ok", nil)
+                                          otherButtonTitles:nil];
     [alert show];
+
     if(SR_LOGS_ENABLED) {
         NSLog(@"[Shake Report] Report status:");
         NSLog(@"[Shake Report] HTTP Status Code: %d", response.statusCode);

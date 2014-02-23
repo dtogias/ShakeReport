@@ -10,5 +10,6 @@
 
 @interface SRReportLoadingView : UIView
 
-@property (nonatomic, strong) UIProgressView *progressView;
+@property(nonatomic, strong) UIProgressView *progressView;
+
 @end
