@@ -1,35 +1,47 @@
-# OS generated files #
-######################
+# OSX Section
 .DS_Store
+profile
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+
+# Windows Section
 Thumbs.db
 
-# xcode #
-######################
-.DS_Store
-*/build/*
-*/builds/*
+# SVN, CVS, HG
+.svn
+CVS
+.hg
+
+# XCode
 *.pbxuser
-!default.pbxuser
+*.model
 *.mode1v3
-!default.mode1v3
 *.mode2v3
-!default.mode2v3
+*.perspective
 *.perspectivev3
-!default.perspectivev3
-xcuserdata
-profile
-*.moved-aside
+*.xcclassmodel/
+
+build/
+Build/
+builds/
 DerivedData
+
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+*.xccheckout
+xcuserdata
+*.moved-aside
+
+*.pyc
+*.[o]
 .idea/
 *.hmap
-*.xccheckout
-/builds/
-/ShakeReport.xcodeproj/project.xcworkspace/xcuserdata/
+*.ipa
 
 #CocoaPods
 Pods
