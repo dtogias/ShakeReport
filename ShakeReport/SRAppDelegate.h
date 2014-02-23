@@ -11,6 +11,4 @@
 
 @interface SRAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) SRUIWindow *window;
-
 @end
