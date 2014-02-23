@@ -41,12 +41,8 @@
 		3F5971051757217000971B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5971041757217000971B9B /* UIKit.framework */; };
 		3F5971071757217000971B9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5971061757217000971B9B /* Foundation.framework */; };
 		3F5971091757217000971B9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5971081757217000971B9B /* CoreGraphics.framework */; };
-		3F59710F1757217000971B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F59710D1757217000971B9B /* InfoPlist.strings */; };
 		3F5971111757217000971B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5971101757217000971B9B /* main.m */; };
 		3F5971151757217000971B9B /* SRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5971141757217000971B9B /* SRAppDelegate.m */; };
-		3F5971171757217000971B9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5971161757217000971B9B /* Default.png */; };
-		3F5971191757217000971B9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5971181757217000971B9B /* Default@2x.png */; };
-		3F59711B1757217000971B9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F59711A1757217000971B9B /* Default-568h@2x.png */; };
 		3F59711E1757217000971B9B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F59711C1757217000971B9B /* MainStoryboard.storyboard */; };
 		3F5971211757217000971B9B /* SRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5971201757217000971B9B /* SRViewController.m */; };
 		3F5971291757217000971B9B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5971281757217000971B9B /* SenTestingKit.framework */; };
@@ -81,6 +77,10 @@
 		3FEE83AB17E839620037A60A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE83AA17E839620037A60A /* AVFoundation.framework */; };
 		3FEE83AD17E839670037A60A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE83AC17E839670037A60A /* CoreMedia.framework */; };
 		3FEE83AF17E8396D0037A60A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE83AE17E8396D0037A60A /* CoreVideo.framework */; };
+		5E6F305318BA63E700F09779 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F305218BA63E700F09779 /* Localizable.strings */; };
+		5E6F307618BA684000F09779 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F307318BA684000F09779 /* Default-568h@2x.png */; };
+		5E6F307718BA684000F09779 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F307418BA684000F09779 /* Default.png */; };
+		5E6F307818BA684000F09779 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F307518BA684000F09779 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,14 +110,10 @@
 		3F5971061757217000971B9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3F5971081757217000971B9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3F59710C1757217000971B9B /* ShakeReport-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShakeReport-Info.plist"; sourceTree = "<group>"; };
-		3F59710E1757217000971B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F5971101757217000971B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5971121757217000971B9B /* ShakeReport-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShakeReport-Prefix.pch"; sourceTree = "<group>"; };
 		3F5971131757217000971B9B /* SRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRAppDelegate.h; sourceTree = "<group>"; };
 		3F5971141757217000971B9B /* SRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRAppDelegate.m; sourceTree = "<group>"; };
-		3F5971161757217000971B9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3F5971181757217000971B9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3F59711A1757217000971B9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3F59711D1757217000971B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3F59711F1757217000971B9B /* SRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRViewController.h; sourceTree = "<group>"; };
 		3F5971201757217000971B9B /* SRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRViewController.m; sourceTree = "<group>"; };
@@ -172,6 +168,11 @@
 		3FEE83AA17E839620037A60A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3FEE83AC17E839670037A60A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		3FEE83AE17E8396D0037A60A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5E6F305218BA63E700F09779 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ShakeReport/Resources/Localizable.strings; sourceTree = "<group>"; };
+		5E6F307318BA684000F09779 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "ShakeReport/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		5E6F307418BA684000F09779 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ShakeReport/Resources/Default.png; sourceTree = "<group>"; };
+		5E6F307518BA684000F09779 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "ShakeReport/Resources/Default@2x.png"; sourceTree = "<group>"; };
+		5E6F307918BA69CE00F09779 /* ShakeReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShakeReporter.h; path = Library/ShakeReporter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +252,7 @@
 			children = (
 				3F59710A1757217000971B9B /* ShakeReport */,
 				3F59712E1757217000971B9B /* ShakeReportTests */,
+				5E6F305118BA63BB00F09779 /* Resources */,
 				3F5971031757217000971B9B /* Frameworks */,
 				3F5971021757217000971B9B /* Products */,
 			);
@@ -305,12 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				3F59710C1757217000971B9B /* ShakeReport-Info.plist */,
-				3F59710D1757217000971B9B /* InfoPlist.strings */,
 				3F5971101757217000971B9B /* main.m */,
 				3F5971121757217000971B9B /* ShakeReport-Prefix.pch */,
-				3F5971161757217000971B9B /* Default.png */,
-				3F5971181757217000971B9B /* Default@2x.png */,
-				3F59711A1757217000971B9B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -350,6 +348,7 @@
 				3F59714A175725F000971B9B /* UIWindow+SRReporter.m */,
 				3FE7F93517EBCE8C00DF0EFB /* SRReportLoadingView.h */,
 				3FE7F93617EBCE8C00DF0EFB /* SRReportLoadingView.m */,
+				5E6F307918BA69CE00F09779 /* ShakeReporter.h */,
 			);
 			name = library;
 			sourceTree = "<group>";
@@ -402,6 +401,17 @@
 				3FE19D7917EE4BBA004F64B9 /* SRHTTPClient.m */,
 			);
 			name = http;
+			sourceTree = "<group>";
+		};
+		5E6F305118BA63BB00F09779 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E6F307418BA684000F09779 /* Default.png */,
+				5E6F307518BA684000F09779 /* Default@2x.png */,
+				5E6F307318BA684000F09779 /* Default-568h@2x.png */,
+				5E6F305218BA63E700F09779 /* Localizable.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,13 +486,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F59710F1757217000971B9B /* InfoPlist.strings in Resources */,
-				3F5971171757217000971B9B /* Default.png in Resources */,
-				3F5971191757217000971B9B /* Default@2x.png in Resources */,
+				5E6F307618BA684000F09779 /* Default-568h@2x.png in Resources */,
 				3F20C06D188F46AA0085BD25 /* SRImageEditorViewController.xib in Resources */,
-				3F59711B1757217000971B9B /* Default-568h@2x.png in Resources */,
+				5E6F307818BA684000F09779 /* Default@2x.png in Resources */,
+				5E6F305318BA63E700F09779 /* Localizable.strings in Resources */,
 				3F59711E1757217000971B9B /* MainStoryboard.storyboard in Resources */,
 				3F7BEEC317C8903B004020BD /* SRReportViewController.xib in Resources */,
+				5E6F307718BA684000F09779 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,14 +591,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3F59710D1757217000971B9B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F59710E1757217000971B9B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		3F59711C1757217000971B9B /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
