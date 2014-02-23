@@ -369,7 +369,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     if (_username && _password) {
         [httpClient setAuthorizationHeaderWithUsername:[self username] password:[self password]];
     }
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"api/reports.json" parameters:reportParams];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/api/reports.json" parameters:reportParams];
     return request;
 }
 
