@@ -261,19 +261,6 @@ NSArray * SRQueryStringPairsFromKeyAndValue(NSString *key, id value) {
 	[self.defaultHeaders setValue:value forKey:header];
 }
 
-- (void)setAuthorizationHeaderWithUsername:(NSString *)username password:(NSString *)password {
-	NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:%@", username, password];
-    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Basic %@", SRBase64EncodedStringFromString(basicAuthCredentials)]];
-}
-
-- (void)setAuthorizationHeaderWithToken:(NSString *)token {
-    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Token token=\"%@\"", token]];
-}
-
-- (void)clearAuthorizationHeader {
-	[self.defaultHeaders removeObjectForKey:@"Authorization"];
-}
-
 #pragma mark -
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method

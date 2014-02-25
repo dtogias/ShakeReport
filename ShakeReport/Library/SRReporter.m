@@ -18,7 +18,6 @@
 #import "SRImageEditorViewController.h"
 
 #define kCrashFlag @"kCrashFlag"
-#define SR_LOGS_ENABLED NO
 
 void uncaughtExceptionHandler(NSException *exception) {
     [[SRReporter reporter] onCrash:exception];
@@ -32,7 +31,6 @@ void uncaughtExceptionHandler(NSException *exception) {
 @end
 
 @implementation SRReporter
-@synthesize mailController;
 
 + (instancetype)reporter {
     static SRReporter *__sharedInstance;
@@ -54,9 +52,9 @@ void uncaughtExceptionHandler(NSException *exception) {
     return self;
 }
 
-- (void)startListenerConnectedToBackendURL:(NSURL *)url
+- (void)startListenerWithBaseURLString:(NSString *)URLString
 {
-    _backendURL = url;
+    _backendURL = [NSURL URLWithString:URLString];
     [self startListener];
 }
 
@@ -117,11 +115,9 @@ void uncaughtExceptionHandler(NSException *exception) {
     if (![self canSendNewReport]) {
         return;
     }
-    if(SR_LOGS_ENABLED) NSLog(@"Send New Report");
+    NSLog(@"Send New Report");
     if (_backendURL) {
         _tempScreenshot = [self screenshot];
-//        SRReportViewController *controller = [SRReportViewController composer];
-//        controller.delegate = self;
         SRImageEditorViewController *controller = [SRImageEditorViewController controllerWithImage:_tempScreenshot];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         if ([navController.navigationBar respondsToSelector:@selector(setTranslucent:)]) {
@@ -205,6 +201,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     NSString *logPath = [documentsDirectory stringByAppendingPathComponent:@"crash.log"];
     return logPath;
 }
+
 #pragma mark Screenshot
 - (void)saveImageToDisk:(UIImage *)image
 {
@@ -306,20 +303,20 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 - (void)showMailComposer
 {
-    if (mailController) {
+    if (_mailController) {
         return;
     }
-    mailController = [[MFMailComposeViewController alloc] init];
-    mailController.mailComposeDelegate = self;
-    mailController.delegate = self;
-    [mailController setSubject:@"[SRReporter] New Report"];
+    _mailController = [[MFMailComposeViewController alloc] init];
+    _mailController.mailComposeDelegate = self;
+    _mailController.delegate = self;
+    [_mailController setSubject:@"[SRReporter] New Report"];
     if (_defaultEmailAddress) {
-        [mailController setToRecipients:@[_defaultEmailAddress]];
+        [_mailController setToRecipients:@[_defaultEmailAddress]];
     }
-    mailController.modalPresentationStyle = UIModalPresentationPageSheet;
-    [self addAttachmentsToMailComposer:mailController];
+    _mailController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self addAttachmentsToMailComposer:_mailController];
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    [self presentReportComposer:mailController inViewController:window.rootViewController];
+    [self presentReportComposer:_mailController inViewController:window.rootViewController];
     _composerDisplayed = YES;
 }
 
@@ -366,10 +363,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     NSMutableDictionary *reportParams = [[self paramsForHTTPReportWithTitle:title andMessage:message] mutableCopy];
     SRHTTPClient *httpClient = [[SRHTTPClient alloc] initWithBaseURL:_backendURL];
-    if (_username && _password) {
-        [httpClient setAuthorizationHeaderWithUsername:[self username] password:[self password]];
-    }
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/api/reports.json" parameters:reportParams];
+    NSString *path = [NSString stringWithFormat:@"/api/reports?token=%@", self.applicationToken];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:reportParams];
     return request;
 }
 
@@ -423,20 +418,16 @@ void uncaughtExceptionHandler(NSException *exception) {
                                           otherButtonTitles:nil];
     [alert show];
 
-    if(SR_LOGS_ENABLED) {
-        NSLog(@"[Shake Report] Report status:");
-        NSLog(@"[Shake Report] HTTP Status Code: %d", response.statusCode);
-    }
+    NSLog(@"[Shake Report] Report status:");
+    NSLog(@"[Shake Report] HTTP Status Code: %d", response.statusCode);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     [_loadingView removeFromSuperview];
-    
-    if(SR_LOGS_ENABLED) {
-        NSLog(@"[Shake Report] Report status:");
-        NSLog(@"[Shake Report] Error: %@", error);
-    }
+
+    NSLog(@"[Shake Report] Report status:");
+    NSLog(@"[Shake Report] Error: %@", error);
 }
 
 - (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
