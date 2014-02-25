@@ -173,6 +173,7 @@
 		5E6F307418BA684000F09779 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ShakeReport/Resources/Default.png; sourceTree = "<group>"; };
 		5E6F307518BA684000F09779 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "ShakeReport/Resources/Default@2x.png"; sourceTree = "<group>"; };
 		5E6F307918BA69CE00F09779 /* ShakeReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShakeReporter.h; path = Library/ShakeReporter.h; sourceTree = "<group>"; };
+		5E6F309918BA6DAE00F09779 /* SRPreprocessorMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRPreprocessorMacros.h; path = Library/SRPreprocessorMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +350,7 @@
 				3FE7F93517EBCE8C00DF0EFB /* SRReportLoadingView.h */,
 				3FE7F93617EBCE8C00DF0EFB /* SRReportLoadingView.m */,
 				5E6F307918BA69CE00F09779 /* ShakeReporter.h */,
+				5E6F309918BA6DAE00F09779 /* SRPreprocessorMacros.h */,
 			);
 			name = library;
 			sourceTree = "<group>";
@@ -669,6 +671,7 @@
 		3F59713A1757217000971B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ShakeReport\"",
@@ -685,6 +688,7 @@
 		3F59713B1757217000971B9B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ShakeReport\"",

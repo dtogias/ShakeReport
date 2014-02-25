@@ -20,9 +20,8 @@ typedef NSString* (^SRCustomInformationBlock)();
 @property (readwrite, nonatomic, copy) SRCustomInformationBlock customInformationBlock;
 @property (nonatomic, copy) NSString *defaultEmailAddress;
 @property (nonatomic, copy) NSURL *backendURL;
-@property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *password;
 @property (nonatomic, assign) BOOL lastSessionCrashed;
+@property (nonatomic, copy) NSString *applicationToken;
 @property (nonatomic, assign) BOOL displayReportComposerWhenShakeDevice;
 
 + (instancetype)reporter;

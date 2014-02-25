@@ -23,10 +23,8 @@
     
     // Send data to a Server instead of displaying the mail composer
     SRReporter *reporter = [SRReporter reporter];
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
-    [reporter setUsername:@"jayztemplier"];
-    [reporter setPassword:@"mypassword"];
-    [reporter startListenerConnectedToBackendURL:url];
+    reporter.applicationToken = @"ADD_YOUR_KEY_HERE";
+    [reporter startListenerWithBaseURLString:@"http://localhost:3000"];
 
     return YES;
 }

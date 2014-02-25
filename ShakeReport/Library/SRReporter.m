@@ -118,8 +118,6 @@ void uncaughtExceptionHandler(NSException *exception) {
     NSLog(@"Send New Report");
     if (_backendURL) {
         _tempScreenshot = [self screenshot];
-//        SRReportViewController *controller = [SRReportViewController composer];
-//        controller.delegate = self;
         SRImageEditorViewController *controller = [SRImageEditorViewController controllerWithImage:_tempScreenshot];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         if ([navController.navigationBar respondsToSelector:@selector(setTranslucent:)]) {
@@ -203,6 +201,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     NSString *logPath = [documentsDirectory stringByAppendingPathComponent:@"crash.log"];
     return logPath;
 }
+
 #pragma mark Screenshot
 - (void)saveImageToDisk:(UIImage *)image
 {
@@ -364,10 +363,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     NSMutableDictionary *reportParams = [[self paramsForHTTPReportWithTitle:title andMessage:message] mutableCopy];
     SRHTTPClient *httpClient = [[SRHTTPClient alloc] initWithBaseURL:_backendURL];
-    if (_username && _password) {
-        [httpClient setAuthorizationHeaderWithUsername:[self username] password:[self password]];
-    }
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/api/reports.json" parameters:reportParams];
+    NSString *path = [NSString stringWithFormat:@"/api/reports?token=%@", self.applicationToken];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:reportParams];
     return request;
 }
 
