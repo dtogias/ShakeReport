@@ -71,5 +71,8 @@
     } else {
         [textField resignFirstResponder];
     }
+
+    return YES;
 }
+
 @end
