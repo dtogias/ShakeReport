@@ -27,7 +27,7 @@ typedef NSString* (^SRCustomInformationBlock)();
 
 + (instancetype)reporter;
 
-- (void)startListenerConnectedToBackendURL:(NSURL *)url;
+- (void)startListenerWithBaseURLString:(NSString *)URLString;
 - (void)startListener;
 
 - (void)stopListener;
